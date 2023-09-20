@@ -9,35 +9,35 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 // create struct  task
-struct  task{
+struct task{
 	char Titre[50];
 	char Description[50]; 
-	int Deadline[50];
+	int  Deadline[50];
 	char Statut[20];
 };
      
 
  struct list {  // declar list 
- 	struct task T[100];
- 	int count;
+    struct  task T[100];
+ 	int     count;
  };
  
-  struct list l ;
+ 	struct list l ;
  
- int i,j,test;
+ 	int i;
  
  // function add 
  void add(){
-	printf("donner le Titre :");
-	scanf("%s",l.T[l.count].Titre);
-	printf("donner le Description :");
-	scanf("%s",l.T[l.count].Description);
-	printf("donner le Deadline :");
-	scanf("%d",l.T[l.count].Deadline);
-	printf("choisir entre les  [ a realiser ou  en cours de realisation ou  finalisee ]:");
-	scanf("%s",l.T[l.count].Statut);
-//	for(i=0;i<l.T.Statut;i++){
-//	   scanf("%s",l.T[l.count].Statut);
+		printf("donner le Titre :");
+		scanf("%s",l.T[l.count].Titre);
+		printf("donner le Description :");
+		scanf("%s",l.T[l.count].Description);
+		printf("donner le Deadline :");
+		scanf("%d",l.T[l.count].Deadline);
+		printf("choisir status entre les [ a realiser ou  en cours de realisation ou  finalisee ]:");
+		scanf("%s",l.T[l.count].Statut);
+	//	for(i=0;i<l.T.Statut;i++){
+//		scanf("%s",l.T[l.count].Statut);
 //	}
        l.count++; 
 }
@@ -63,11 +63,11 @@ struct  task{
 
 
 
- void afficher(){
- 	int ch;
- 	    printf("[1]Trier les tâches par ordre alphabétique.\n");
- 	    printf("[2]Trier les tâches par deadline.\n");
- 	    printf("[3]Afficher les tâches dont le deadline est dans 3 jours ou moins\n");
+void afficher(){
+    	int ch;
+ 	    printf("[1]Trier les taches par ordre alphabetique.\n");
+ 	    printf("[2]Trier les taches par deadline.\n");
+ 	    printf("[3]Afficher les taches dont le deadline est dans 3 jours ou moins\n");
  	    printf("Tapez votre choix [1-3] : ");
         scanf("%d", &ch);
  	    switch(ch){
@@ -78,14 +78,15 @@ struct  task{
  	    		break;
  	    	case 3:
  	    		break;
- 	    		
- 	    		default:
- 	    			printf("Choix invalide. Veuillez choisir une option valide\n");
-		 }
-// 	    for(i=0;i<l.count;i++){
-// 	    	printf("le Titre est : %s , le Description est : %s ,le  Deadline est : %d ,le status est : %s\n",l.T[i].Titre,l.T[i].Description,l.T[i].Deadline,l.T[i].Statut);
+   		
+   	    	default:
+    			printf("Choix invalide. Veuillez choisir une option valide\n");
+	    }
+    }
+//	    for(i=0;i<l.count;i++){
+//	    	printf("le Titre est : %s , le Description est : %s ,le  Deadline est : %d ,le status est : %s\n",l.T[i].Titre,l.T[i].Description,l.T[i].Deadline,l.T[i].Statut);
 //		 }
- }
+// }
  
 int main(int argc, char *argv[]) {
 
