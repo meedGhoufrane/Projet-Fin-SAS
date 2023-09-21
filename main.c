@@ -10,10 +10,11 @@
 
 // create struct  task
 struct task{
-	char Titre[50];
-	char Description[50]; 
-	int  Deadline[50];
-	char Statut[20];
+	int  id[100];
+	char Titre[100];
+	char Description[200]; 
+	int  Deadline[100];
+	char Statut[100];
 };
      
 
@@ -22,12 +23,15 @@ struct task{
  	int     count;
  };
  
- 	struct list l ;
+ 	struct list l;
+ 	 struct  task z ;
  
- 	int i;
+ 	int i,j,test;
  
  // function add 
  void add(){
+ 	    printf("donner le Identifiant :");
+		scanf("%s",l.T[l.count].id);
 		printf("donner le Titre :");
 		scanf("%s",l.T[l.count].Titre);
 		printf("donner le Description :");
@@ -42,21 +46,22 @@ struct task{
        l.count++; 
 }
 
-// Trier alphabétique
-//void Trier alpha(){
-//	test = 0;
+// // Trier alphabétique
+//   void Trieralpha(){
+//    test = 0;
 //	i=0;
 //	do{
 //		for(int j = l.count;j>0;j--){
-//			
+//			if(strcmp(l.T[j].Titre,l.T[j-1].Titre)){
+//				      z=l.T[j];
+//				      l.T[j]=l.T[j-1];
+//				      l.T[j-1]=z;
+//				      test=1;
+//			}         
 //		}
-//		
-		
-		
-//		
-//	}
+//	}while(test == 1 && i<l.count);
 //}
-//
+
 
 
 
