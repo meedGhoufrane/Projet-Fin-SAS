@@ -11,7 +11,7 @@ struct task{
     int  id;
 	char Titre[50];
 	char Description[50]; 
-	time_t Deadline;
+	char Deadline[10];
 	char Statut[50];
     };  
     
@@ -26,9 +26,9 @@ void add(){
 	printf("donner le Titre :");
 	scanf("%s",tasks[count].Titre);
 	printf("donner le Description :");
-	scanf("%s",tasks[count].Description);
-	printf("donner le Deadline :");
-	scanf("%s",&(tasks[count].Deadline));
+	fgets(tasks[count].Description,sizeof(tasks[count].Description),stdout);
+	printf("donner le Deadline (YYYY-MM-DD) :");
+    scanf("%s", tasks[count].Deadline);
 	printf("choisir status entre les : \n");
 	printf("[1] T Do \n");
 	printf("[2] Doing\n");
@@ -37,7 +37,7 @@ void add(){
 	if(strcmp(tasks[count].Statut,"1")==0){    // opration for count  the choice
 		todo+=1;
 	}else if(strcmp(tasks[count].Statut,"2")==0){
-		doing +=1;
+	   doing +=1;
 	}else if(strcmp(tasks[count].Statut,"3")==0){
 		done +=1;
 	}
@@ -205,7 +205,7 @@ int main(int argc, char *argv[]) {
                 break;
             case 7:
             	printf("[1] Afficher le nombre total des taches.\n");
-            	printf("[2] Afficher le nombre de taches completes et incomplètes.\n");
+            	printf("[2] Afficher le nombre de taches completes et incompletes.\n");
             	printf("[3] Afficher le nombre de jours restants jusqu'au delai de chaque tache\n");
             	printf("Tapez votre choix :");
             	scanf("%d",&choi);
@@ -214,7 +214,7 @@ int main(int argc, char *argv[]) {
             			printf("le nombre total des taches : %d  \n ",count);
             		break;
             		case 2:
-            			printf("le nombre de tâches complètes et incomplètes : %d , %d \n ",done,doing);
+            			printf("le nombre de taches completes : %d  et incompletes : %d \n ",done,todo+doing);
             		break;
             		case 3:
             			
