@@ -19,14 +19,14 @@ struct task{
  	int count = 0,todo = 0,doing = 0,done =0;
  	int i, j, test;
  	struct task n;
- 
+    char newdes[50];
  // function add ======================================
 void add(){
  	
 	printf("donner le Titre :");
-	scanf("%s",tasks[count].Titre);
+	scanf(" %[^\n]",tasks[count].Titre);
 	printf("donner le Description :");
-	scanf("%s",tasks[count].Description);
+	scanf(" %[^\n]",tasks[count].Description);
 	printf("donner le Deadline :");
 	scanf("%s",&(tasks[count].Deadline));
 	printf("choisir status entre les : \n");
@@ -153,7 +153,30 @@ void Rechercher(){
 		}
     	return post;
 	}
- //====================================================================
+ //==================================================================================================================
+// update tache
+//
+//void update(int posid){
+//	    int id;
+//		printf("donne le id :");
+//        scanf("%d",&id);    	 
+//	 for(i=0;i<tasks[count].id;i++){
+//		if( posid == tasks[count].id ){
+//		  printf("donne new dscr : \n");
+//		  scanf(" %[^\n]",newdes);
+//		  strcpy(tasks[count].Description,newdes);
+//		}
+//	      
+//	}
+//}
+//void updateT(int id, char Statut){
+//	 for(i=0;i<tasks[count].id;i++){
+//	 	if(tasks[count].id==id){
+//	 		strcpy(tasks[count].Description,newDescription);
+//		 }
+//	 }
+//	 
+//}
 
 
   
@@ -178,17 +201,18 @@ int main(int argc, char *argv[]) {
 
     switch (choice) {
             case 1:
-                   add();
+                add();
                 break;
             case 2:
             
             
                 break;
             case 3:
-            		afficher();
+            	afficher();
                 break;
             case 4:
-            		
+                update(id);
+    
                 break;
             case 5:
             	 printf("donne le id :");
