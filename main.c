@@ -18,7 +18,6 @@ struct task{
 	char Description[50]; 
 	char Deadline[10];
 	char Statut[50];
-<<<<<<< HEAD
 };  
 
 struct  task tasks[100];
@@ -33,35 +32,6 @@ int rechercherbyid(int id){
 		if(id == tasks[i].id){
 			posid=i;
 		}
-=======
-    };  
-    
-    struct  task tasks[100];
- 	int count = 0,todo = 0,doing = 0,done =0;
- 	int i, j, test;
- 	struct task n;
- 
- // function add ======================================
-void add(){
- 	
-	printf("donner le Titre :");
-	scanf("%s",tasks[count].Titre);
-	printf("donner le Description :");
-	fgets(tasks[count].Description,sizeof(tasks[count].Description),stdout);
-	printf("donner le Deadline (YYYY-MM-DD) :");
-    scanf("%s", tasks[count].Deadline);
-	printf("choisir status entre les : \n");
-	printf("[1] T Do \n");
-	printf("[2] Doing\n");
-	printf("[3] Done \n");
-	scanf("%s",tasks[count].Statut);
-	if(strcmp(tasks[count].Statut,"1")==0){    // opration for count  the choice
-		todo+=1;
-	}else if(strcmp(tasks[count].Statut,"2")==0){
-	   doing +=1;
-	}else if(strcmp(tasks[count].Statut,"3")==0){
-		done +=1;
->>>>>>> 31982ed63fd74cc02b56d0941777618ad4dc92e2
 	}
 	return posid;
 }
@@ -337,29 +307,7 @@ int main(int argc, char *argv[]) {
                 break;
                 
             case 7:
-<<<<<<< HEAD
                 Statistiques();
-=======
-            	printf("[1] Afficher le nombre total des taches.\n");
-            	printf("[2] Afficher le nombre de taches completes et incompletes.\n");
-            	printf("[3] Afficher le nombre de jours restants jusqu'au delai de chaque tache\n");
-            	printf("Tapez votre choix :");
-            	scanf("%d",&choi);
-            	switch(choi){
-            		case 1:
-            			printf("le nombre total des taches : %d  \n ",count);
-            		break;
-            		case 2:
-            			printf("le nombre de taches completes : %d  et incompletes : %d \n ",done,todo+doing);
-            		break;
-            		case 3:
-            			
-            		break;
-            		default:
-                	printf("Choix invalide. Veuillez choisir une option valide.\n");
-				}
-            		
->>>>>>> 31982ed63fd74cc02b56d0941777618ad4dc92e2
                 break;
                 
             default:
