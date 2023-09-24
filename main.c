@@ -76,6 +76,16 @@ void add(){
     tasks[count].id = count;
 }
 
+void addMulti(){
+	int number;
+	int i;
+	printf("donne le nomber de tache : \n");
+	scanf("%d",&number);
+	for(i=0;i<number ; i++){
+		add();
+	}
+}
+
 // delete 
 void deleteTask(){
     int deleteId;
